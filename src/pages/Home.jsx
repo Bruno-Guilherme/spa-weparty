@@ -1,3 +1,7 @@
 export function Home(params) {
-    return <h1>HOME</h1>
+    return <>
+        <header></header>
+        <main></main>
+        <footer></footer>
+    </>
 }
