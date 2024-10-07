@@ -27,6 +27,22 @@ export function About() {
                 O WeParty foi criado para facilitar a conexão entre organizadores de eventos e fornecedores de serviços especializados, permitindo que você encontre tudo o que precisa para seu evento em um só lugar. <br/>
                 Ele surgiu a partir de um projeto de Residência Digital, com cinco estudantes, alunos do Embarque Digital no Recife.
                 </Typography>
+                <Typography variant="h5" component={"h5"} gutterBottom>
+                    <br/>
+                    Objetivo e Missão!
+                </Typography>
+                <Typography variant="body1" textAlign={"center"}>
+                Nossa missão é simplificar a organização de eventos, proporcionando uma plataforma onde fornecedores e clientes possam se conectar de forma prática e segura. Buscamos inovar, unificando a rede de fornecedores/organizadores de evento em um só lugar!
+                </Typography>
+                <Typography variant="h5" textAlign={"center"}>
+                    <br/>
+                    Benefícios para os usuários    
+                </Typography>
+                <Typography variant="body1" component={"h5"} gutterBottom>
+                Facilidade na contratação de serviços. <br/>
+                Variedade de fornecedores em um só lugar. <br/>
+                Pagamentos seguros e integrados.
+                </Typography>
             </Box>
         </Container>
     );
