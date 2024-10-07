@@ -8,7 +8,7 @@ import {
   MenuItem,
   TextField,
   Button,
-  Box,
+  Container,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
@@ -64,11 +64,9 @@ const LayoutComHeader = () => {
       </Menu>
 
       <main>
-        <Box sx={{ flexGrow: 1, padding: 2 }}>
-          {" "}
-          {/* Box adicionando padding */}
+        <Container maxWidth="md">
           <Outlet />
-        </Box>
+        </Container >
       </main>
 
       <footer>
