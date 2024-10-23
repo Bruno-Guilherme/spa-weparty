@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Parse from "parse/dist/parse.min.js";
 
-// Inicializar o Parse
 Parse.initialize(
-  process.env.REACT_APP_PARSE_APP_ID,
-  process.env.REACT_APP_PARSE_JS_KEY
+  import.meta.env.VITE_PARSE_APP_ID,
+  import.meta.env.VITE_PARSE_JS_KEY
 );
+
 Parse.serverURL = "https://parseapi.back4app.com/";
 
 const CreateUserComponent = () => {

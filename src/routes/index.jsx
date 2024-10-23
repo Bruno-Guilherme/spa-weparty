@@ -1,5 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Home, Sobre } from "../pages";
+import LayoutSemHeader from "../shared/layouts/LayoutSemHeader";
+import LayoutComHeader from "../shared/layouts/LayoutComHeader";
+import CreateUserComponent from "../tests/conexaoBack";
 
 const router = createBrowserRouter([
     {

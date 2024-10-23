@@ -1,1 +1,1 @@
-export {};
+export * from "./card-pequeno/CardPequeno";

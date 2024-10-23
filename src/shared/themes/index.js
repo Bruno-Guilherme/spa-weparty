@@ -1,2 +1,2 @@
-export * from "./Claro"
-export * from "./Escuro"
+export * from "./Claro";
+export * from "./Escuro";

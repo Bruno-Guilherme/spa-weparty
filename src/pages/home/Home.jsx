@@ -1,9 +1,9 @@
-import { CardPequeno } from "../components/card-pequeno/CardPequeno";
-import imgBuffet from "../assets/card-pequeno/buffet.png";
-import imgCerimonial from "../assets/card-pequeno/cerimonial.png";
-import imgDecoracao from "../assets/card-pequeno/decoracao.png";
-import imgFotografia from "../assets/card-pequeno/fotografia.png";
-import imgPersonalizados from "../assets/card-pequeno/personalizados.png";
+import { CardPequeno } from "../../shared/components";
+import imgBuffet from "../../assets/card-pequeno/buffet.png";
+import imgCerimonial from "../../assets/card-pequeno/cerimonial.png";
+import imgDecoracao from "../../assets/card-pequeno/decoracao.png";
+import imgFotografia from "../../assets/card-pequeno/fotografia.png";
+import imgPersonalizados from "../../assets/card-pequeno/personalizados.png";
 
 import { Box } from "@mui/material";
 
