@@ -3,8 +3,8 @@ import Parse from "parse/dist/parse.min.js";
 
 // Inicializar o Parse
 Parse.initialize(
-  "NdRhReEWkw5qlw1rLVZ0q0ob0HE8TmMI06klzPt3",
-  "VwKu5hsCgL74VzbndaO5V32FQhrSYua4SlrSpeWj"
+  process.env.REACT_APP_PARSE_APP_ID,
+  process.env.REACT_APP_PARSE_JS_KEY
 );
 Parse.serverURL = "https://parseapi.back4app.com/";
 
