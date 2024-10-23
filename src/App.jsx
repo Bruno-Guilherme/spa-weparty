@@ -5,6 +5,7 @@ import LayoutSemHeader from "./components/layouts/LayoutSemHeader";
 
 import { About } from "./pages/About";
 import { Home } from "./pages/Home";
+import CreateUserComponent from "./tests/conexaoBack";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<LayoutComHeader />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="cadastro" element={<CreateUserComponent>Contact</CreateUserComponent>} />
         </Route>
 
         {/* Rotas sem o header */}
