@@ -15,11 +15,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "about", // Rota sobre
+        path: "/about", // Rota sobre
         element: <About />,
       },
       {
-        path: "cadastro", // Rota de cadastro
+        path: "/cadastro", // Rota de cadastro
         element: <CreateUserComponent />,
       },
     ],
