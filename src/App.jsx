@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<LayoutComHeader />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="cadastro" element={<CreateUserComponent>Contact</CreateUserComponent>} />
+          <Route path="cadastro" element={<CreateUserComponent />} />
         </Route>
 
         {/* Rotas sem o header */}
