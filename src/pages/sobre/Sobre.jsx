@@ -1,6 +1,6 @@
 import { Typography, Container, Box } from "@mui/material";
 
-export function About() {
+export function Sobre() {
     return (
         <Container maxWidth="md">
             <Box sx={{ padding: 2, textAlign: 'center' }}>
