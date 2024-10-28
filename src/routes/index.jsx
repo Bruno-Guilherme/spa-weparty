@@ -3,13 +3,15 @@ import { Home, Sobre } from "../pages";
 import LayoutSemHeader from "../shared/layouts/LayoutSemHeader";
 import LayoutComHeader from "../shared/layouts/LayoutComHeader";
 import CreateUserComponent from "../tests/conexaoBack";
+import { fornecedorLoader } from "./loaders/fornecedorLoader";
 
 const router = createBrowserRouter([
     {
       element: <LayoutComHeader />, // Layout com header
       children: [
         {
-          path: "/", // Rota raiz
+          path: "/", 
+          loader: fornecedorLoader,
           element: <Home />,
         },
         {
