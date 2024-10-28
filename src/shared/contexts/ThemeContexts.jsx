@@ -21,7 +21,10 @@ export const AppThemeProvider = ({ children }) => {
   );
 
   // Mudança de tema
-  const theme = useMemo(() => (themeName === "claro" ? TemaClaro : TemaEscuro), []);
+  const theme = useMemo(
+    () => (themeName === "claro" ? TemaClaro : TemaEscuro),
+    []
+  );
 
   return (
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>
@@ -30,6 +33,9 @@ export const AppThemeProvider = ({ children }) => {
           sx={{
             minHeight: "100vh",
             minWidth: "100vw",
+            display: "flex",
+            margin: "0 auto",
+            flexDirection: "column",
             bgcolor: theme.palette.background.default,
           }}
         >
