@@ -46,7 +46,7 @@ export function Home() {
               justifyContent: "center",
               flexDirection: "row",
               gap: 2, // Espaçamento entre os itens
-              //flexWrap: "wrap", // Permite que os itens quebrem de linha se a tela for pequena
+              flexWrap: "wrap", //flexWrap: "wrap", // Permite que os itens quebrem de linha se a tela for pequena
             }}          
           >
             <CardGrande categoriaNome={"BlackFriday para Buffet"} urlImagem={img1} descricaoImagem={"ícone preto Black Friday"}/>
