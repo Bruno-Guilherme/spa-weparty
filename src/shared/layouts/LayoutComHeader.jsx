@@ -10,6 +10,7 @@ import {
   Button,
   Container,
   Box,
+  Grid2,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"; // Ícone do carrinho
@@ -77,17 +78,36 @@ const LayoutComHeader = () => {
         </MenuItem>
       </Menu>
 
-        <Container maxWidth="md" component="main" sx={{
-          height: "100vh",
-        }}>
-          <Outlet />
-        </Container>
+      {/* <Grid2
+        container
+        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+        direction="row"
+        sx={{ flexGrow: 1, bgcolor: "pink" }}
+      >
+        <Grid2 item xs={12} sx={{ bgcolor: "pink" }}></Grid2>
+      </Grid2> */}
 
-      <footer>
-        <Typography variant="body2" color="text.secondary" align="center">
+      <Box
+        sx={{
+          flexGrow: 1,
+          bgcolor: "pink",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <Outlet />
+      </Box>
+
+      {/* Footer */}
+      <Box
+        component="footer"
+        sx={{ bgcolor: "green", padding: 2, textAlign: "center" }}
+      >
+        <Typography variant="body2" color="text.secondary">
           © 2024 WeParty
         </Typography>
-      </footer>
+      </Box>
     </>
   );
 };
