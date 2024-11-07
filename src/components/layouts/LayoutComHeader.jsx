@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom"; // Importe useNavigate
 import {
   AppBar,
   Toolbar,
@@ -14,6 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 
 const LayoutComHeader = () => {
+  const navigate = useNavigate(); // Crie o navigate para redirecionamento
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleMenuClick = (event) => {
@@ -22,6 +23,11 @@ const LayoutComHeader = () => {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+  };
+
+  // Função para redirecionar ao clicar no botão "Entrar"
+  const handleLoginClick = () => {
+    navigate("/login"); // Redireciona para a rota de login
   };
 
   return (
@@ -45,7 +51,9 @@ const LayoutComHeader = () => {
             placeholder="Pesquisar no WeParty"
             sx={{ marginRight: 2 }}
           />
-          <Button color="inherit">Entrar</Button>
+          <Button color="inherit" onClick={handleLoginClick}> {/* Adicione o evento onClick */}
+            Entrar
+          </Button>
           <Button color="inherit">Carrinho</Button>
         </Toolbar>
       </AppBar>
@@ -66,7 +74,7 @@ const LayoutComHeader = () => {
       <main>
         <Container maxWidth="md">
           <Outlet />
-        </Container >
+        </Container>
       </main>
 
       <footer>
