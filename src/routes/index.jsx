@@ -1,8 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Sobre } from "../pages";
+
 import LayoutSemHeader from "../shared/layouts/LayoutSemHeader";
 import LayoutComHeader from "../shared/layouts/LayoutComHeader";
-import CreateUserComponent from "../tests/conexaoBack";
+
+import { Home, Sobre } from "../pages";
+import ExemploPage from "../pages/exemplo-page/ExemploPage";
+
 import { fornecedorLoader } from "./loaders/fornecedorLoader";
 
 const router = createBrowserRouter([
@@ -15,13 +18,13 @@ const router = createBrowserRouter([
           element: <Home />,
         },
         {
-          path: "/about", // Rota sobre
+          path: "sobre", // Rota sobre
           element: <Sobre />,
         },
         {
-          path: "/cadastro", // Rota de cadastro
-          element: <CreateUserComponent />,
-        },
+          path: "exemplo-header",
+          element: <ExemploPage />,
+        }
       ],
     },
     {
@@ -32,9 +35,13 @@ const router = createBrowserRouter([
           element: <h1>Login</h1>,
         },
         {
-          path: "register", // Rota de registro
+          path: "cadastro",
           element: <h1>Registrar</h1>,
         },
+        {
+          path: "exemplo",
+          element: <ExemploPage />,
+        }
       ],
     },
   ]);

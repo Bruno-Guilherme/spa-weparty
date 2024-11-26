@@ -1,11 +1,12 @@
-import { CardPequeno } from "../../shared/components";
+import { Box } from "@mui/material";
+
+import { CardPequeno } from "../../shared/components/card-pequeno/CardPequeno";
 import imgBuffet from "../../assets/card-pequeno/buffet.png";
 import imgCerimonial from "../../assets/card-pequeno/cerimonial.png";
 import imgDecoracao from "../../assets/card-pequeno/decoracao.png";
 import imgFotografia from "../../assets/card-pequeno/fotografia.png";
 import imgPersonalizados from "../../assets/card-pequeno/personalizados.png";
 
-import { Box } from "@mui/material";
 import { CardGrande } from "../../shared/components/card-grande/CardGrande";
 import img1 from "../../assets/card-grande/img1.png";
 import img2 from "../../assets/card-grande/img2.png";
@@ -16,7 +17,6 @@ import img4 from "../../assets/card-grande/img4.png";
 export function Home() {
   return (
     <>
-      <header></header>
       <main>
         <Box sx={{ textAlign: 'center' }}>
           <h2>Categorias de serviços</h2>
