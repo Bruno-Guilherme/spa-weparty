@@ -14,7 +14,7 @@ import img2 from "../../assets/card-grande/img2.png";
 import img3 from "../../assets/card-grande/img3.png";
 import img4 from "../../assets/card-grande/img4.png";
 
-import { CardMedio } from "../../shared/components/card-medio/CardMedio"
+import { CardMedio } from "../../shared/components/card-medio/CardMedio";
 
 export function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -53,11 +53,31 @@ export function Home() {
             transition: "all 1s ease-out 0.5s", // Atraso para os cartões aparecerem depois do título
           }}
         >
-          <CardPequeno categoriaNome={"Buffet"} urlImagem={imgBuffet} descricaoImagem={"Ícone buffet"} />
-          <CardPequeno categoriaNome={"Decoração"} urlImagem={imgDecoracao} descricaoImagem={"Ícone decoração"} />
-          <CardPequeno categoriaNome={"Personalizados"} urlImagem={imgPersonalizados} descricaoImagem={"Ícone personalizados"} />
-          <CardPequeno categoriaNome={"Cerimonial"} urlImagem={imgCerimonial} descricaoImagem={"Ícone cerimonial"} />
-          <CardPequeno categoriaNome={"Fotografia"} urlImagem={imgFotografia} descricaoImagem={"Ícone fotografia"} />
+          <CardPequeno
+            categoriaNome={"Buffet"}
+            urlImagem={imgBuffet}
+            descricaoImagem={"Ícone buffet"}
+          />
+          <CardPequeno
+            categoriaNome={"Decoração"}
+            urlImagem={imgDecoracao}
+            descricaoImagem={"Ícone decoração"}
+          />
+          <CardPequeno
+            categoriaNome={"Personalizados"}
+            urlImagem={imgPersonalizados}
+            descricaoImagem={"Ícone personalizados"}
+          />
+          <CardPequeno
+            categoriaNome={"Cerimonial"}
+            urlImagem={imgCerimonial}
+            descricaoImagem={"Ícone cerimonial"}
+          />
+          <CardPequeno
+            categoriaNome={"Fotografia"}
+            urlImagem={imgFotografia}
+            descricaoImagem={"Ícone fotografia"}
+          />
         </Box>
       </Box>
 
@@ -89,27 +109,42 @@ export function Home() {
             transition: "all 1s ease-out 1.5s", // Atraso para os cartões de promoções
           }}
         >
-          <CardGrande categoriaNome={"BlackFriday para Buffet"} urlImagem={img1} descricaoImagem={"ícone preto Black Friday"} />
-          <CardGrande categoriaNome={"50% Off para fotografia"} urlImagem={img2} descricaoImagem={"ícone preto Black Friday"} />
-          <CardGrande categoriaNome={"Sale em personalizados"} urlImagem={img3} descricaoImagem={"ícone preto Black Friday"} />
-          <CardGrande categoriaNome={"Black Friday para fotografia"} urlImagem={img4} descricaoImagem={"ícone preto Black Friday"} />
+          <CardGrande
+            categoriaNome={"BlackFriday para Buffet"}
+            urlImagem={img1}
+            descricaoImagem={"ícone preto Black Friday"}
+          />
+          <CardGrande
+            categoriaNome={"50% Off para fotografia"}
+            urlImagem={img2}
+            descricaoImagem={"ícone preto Black Friday"}
+          />
+          <CardGrande
+            categoriaNome={"Sale em personalizados"}
+            urlImagem={img3}
+            descricaoImagem={"ícone preto Black Friday"}
+          />
+          <CardGrande
+            categoriaNome={"Black Friday para fotografia"}
+            urlImagem={img4}
+            descricaoImagem={"ícone preto Black Friday"}
+          />
         </Box>
       </Box>
 
-<Box sx={{ textAlign: "center", padding: 2 }}>
-  {/* Título da seção */}
-  <Typography
-    variant="h2"
-    component="h2"
-    sx={{
-      fontSize: "1.5rem",
-      fontWeight: 600,
-    }}
-  >
-    Fornecedores populares
-  </Typography>
-</Box>
-
+      <Box sx={{ textAlign: "center", padding: 2 }}>
+        {/* Título da seção */}
+        <Typography
+          variant="h2"
+          component="h2"
+          sx={{
+            fontSize: "1.5rem",
+            fontWeight: 600,
+          }}
+        >
+          Fornecedores populares
+        </Typography>
+      </Box>
     </main>
   );
 }

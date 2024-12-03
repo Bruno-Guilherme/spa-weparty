@@ -20,10 +20,6 @@ import PersonIcon from "@mui/icons-material/Person";
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleMenuClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
