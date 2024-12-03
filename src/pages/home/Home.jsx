@@ -14,6 +14,8 @@ import img2 from "../../assets/card-grande/img2.png";
 import img3 from "../../assets/card-grande/img3.png";
 import img4 from "../../assets/card-grande/img4.png";
 
+import { CardMedio } from "../../shared/components/card-medio/CardMedio"
+
 export function Home() {
   const [loaded, setLoaded] = useState(false);
 
@@ -93,6 +95,21 @@ export function Home() {
           <CardGrande categoriaNome={"Black Friday para fotografia"} urlImagem={img4} descricaoImagem={"ícone preto Black Friday"} />
         </Box>
       </Box>
+
+<Box sx={{ textAlign: "center", padding: 2 }}>
+  {/* Título da seção */}
+  <Typography
+    variant="h2"
+    component="h2"
+    sx={{
+      fontSize: "1.5rem",
+      fontWeight: 600,
+    }}
+  >
+    Fornecedores populares
+  </Typography>
+</Box>
+
     </main>
   );
 }

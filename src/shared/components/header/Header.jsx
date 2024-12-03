@@ -15,7 +15,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 
 // Importa a fonte estilizada
-import "@fontsource/montserrat";
+//import "@fontsource/montserrat";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
