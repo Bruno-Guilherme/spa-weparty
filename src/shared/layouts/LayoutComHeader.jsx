@@ -18,7 +18,6 @@ const LayoutComHeader = () => {
       <Container
       maxWidth="xl"
       sx={{
-        bgcolor: "red",
         flexGrow: 2
       }}
       >

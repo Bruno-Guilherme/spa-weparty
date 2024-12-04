@@ -7,6 +7,7 @@ import { Home, Sobre } from "../pages";
 import ExemploPage from "../pages/exemplo-page/ExemploPage";
 
 import { fornecedorLoader } from "./loaders/fornecedorLoader";
+import { Carrinho } from "../tests/carrinho/Carrinho";
 
 const router = createBrowserRouter([
     {
@@ -18,13 +19,29 @@ const router = createBrowserRouter([
           element: <Home />,
         },
         {
-          path: "sobre", // Rota sobre
-          element: <Sobre />,
+          path: "promocoes",
+          element: <ExemploPage />,
+        },
+        {
+          path: "fornecedores",
+          element: <ExemploPage />,
+        },
+        {
+          path: "servicos",
+          element: <ExemploPage />,
+        },
+        {
+          path: "carrinho",
+          element: <Carrinho />,
         },
         {
           path: "exemplo-header",
           element: <ExemploPage />,
-        }
+        },
+        {
+          path: "sobre", // Rota sobre
+          element: <Sobre />,
+        },
       ],
     },
     {
@@ -40,7 +57,7 @@ const router = createBrowserRouter([
         },
         {
           path: "exemplo",
-          element: <ExemploPage />,
+          element: <Carrinho />,
         }
       ],
     },
