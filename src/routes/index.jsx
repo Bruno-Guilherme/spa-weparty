@@ -8,6 +8,9 @@ import ExemploPage from "../pages/exemplo-page/ExemploPage";
 
 import { fornecedorLoader } from "./loaders/fornecedorLoader";
 import { Carrinho } from "../tests/carrinho/Carrinho";
+import Fornecedores from "../pages/fornecedores/Fornecedores";
+import Promocoes from "../pages/promocoes/Promocoes";
+import Servicos from "../pages/servicos/Servicos";
 
 const router = createBrowserRouter([
     {
@@ -20,15 +23,15 @@ const router = createBrowserRouter([
         },
         {
           path: "promocoes",
-          element: <ExemploPage />,
+          element: <Promocoes />,
         },
         {
           path: "fornecedores",
-          element: <ExemploPage />,
+          element: <Fornecedores />,
         },
         {
           path: "servicos",
-          element: <ExemploPage />,
+          element: <Servicos />,
         },
         {
           path: "carrinho",
