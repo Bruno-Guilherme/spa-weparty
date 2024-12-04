@@ -144,6 +144,11 @@ export function Home() {
         >
           Fornecedores populares
         </Typography>
+
+        <CardMedio
+          categoriaNome={"Aniel Flores"}
+          //urlImagem={"url-da-imagem-1"}
+        />
       </Box>
     </main>
   );
