@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
@@ -9,19 +9,20 @@ const LayoutComHeader = () => {
       sx={{
         display: "flex",
         flexDirection: "column",
+        minHeight: "100vh",
+
       }}
     >
       <Header />
 
-      <Box
-        sx={{
-          flexGrow: 1,
-          display: "flex",
-          flexDirection: "column",
-        }}
+      <Container
+      maxWidth="xl"
+      sx={{
+        flexGrow: 2
+      }}
       >
         <Outlet />
-      </Box>
+      </Container>
 
       <Footer />
     </Box>
