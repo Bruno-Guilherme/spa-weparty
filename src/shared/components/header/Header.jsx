@@ -9,16 +9,15 @@ import {
   TextField,
   Button,
   Box,
+  Badge, // Certifique-se de importar o Badge
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 
-// Importa a fonte estilizada
-//import "@fontsource/montserrat";
-
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [cartCount, setCartCount] = useState(3); // Exemplo de quantidade de itens no carrinho
 
   const handleMenuClose = () => {
     setAnchorEl(null);
@@ -85,7 +84,9 @@ const Header = () => {
           {/* Ícones de carrinho e perfil com alinhamento e espaçamento correto */}
           <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
             <IconButton color="inherit" sx={{ color: "#333" }}>
-              <ShoppingCartIcon />
+              <Badge badgeContent={cartCount} color="error">
+                <ShoppingCartIcon />
+              </Badge>
             </IconButton>
             <IconButton color="inherit" sx={{ color: "#333" }}>
               <PersonIcon />
