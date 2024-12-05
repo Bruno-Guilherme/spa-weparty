@@ -140,15 +140,25 @@ export function Home() {
           sx={{
             fontSize: "1.5rem",
             fontWeight: 600,
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)", // Duas colunas inicialmente
+            gap: 2,
+            marginTop: 2,
           }}
+
+          
         >
           Fornecedores populares
         </Typography>
-        
+          
         <CardMedio
           categoriaNome={"Aniel Flores"}
           urlImagem={"https://via.placeholder.com/100"}
-        />        
+        />
+          <CardMedio
+          categoriaNome={"RC Presentes"}
+          urlImagem={"https://via.placeholder.com/100"}
+        />    
       </Box>
     </main>
   );
