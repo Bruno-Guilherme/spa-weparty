@@ -27,10 +27,13 @@ const Header = () => {
 
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: "#ffffff", color: "#333" }}>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "#ffffff", color: "#333" }}
+      >
         <Toolbar sx={{ maxWidth: "xl", margin: "0 auto", width: "100%" }}>
           {/* Logomarca estilizada */}
-          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
             <Typography
               variant="h4"
               component="h1"
@@ -46,7 +49,9 @@ const Header = () => {
             </Typography>
           </Link>
 
-          <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2, flexGrow: 1 }}>
+          <Box
+            sx={{ display: { xs: "none", sm: "flex" }, gap: 2, flexGrow: 1 }}
+          >
             <Link to="/">
               <Button color="inherit" sx={{ color: "#333", fontWeight: 500 }}>
                 Home
@@ -68,7 +73,11 @@ const Header = () => {
               </Button>
             </Link>
             <Link to="/sobre">
-              <Button color="inherit" href="/sobre" sx={{ color: "#333", fontWeight: 500 }}>
+              <Button
+                color="inherit"
+                href="/sobre"
+                sx={{ color: "#333", fontWeight: 500 }}
+              >
                 Sobre
               </Button>
             </Link>
@@ -102,14 +111,16 @@ const Header = () => {
                 </Badge>
               </IconButton>
             </Link>
-            <IconButton color="inherit" sx={{ color: "#333" }}>
-              <PersonIcon />
-            </IconButton>
+            <Link to="/login">
+              <IconButton color="inherit" sx={{ color: "#333" }}>
+                <PersonIcon />
+              </IconButton>
+            </Link>
           </Box>
         </Toolbar>
-      </AppBar >
+      </AppBar>
 
-      < Menu
+      <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleMenuClose}
@@ -125,12 +136,18 @@ const Header = () => {
           </a>
         </MenuItem>
         <MenuItem onClick={handleMenuClose}>
-          <a href="/promocoes" style={{ textDecoration: "none", color: "#333" }}>
+          <a
+            href="/promocoes"
+            style={{ textDecoration: "none", color: "#333" }}
+          >
             Promoções
           </a>
         </MenuItem>
         <MenuItem onClick={handleMenuClose}>
-          <a href="/fornecedores" style={{ textDecoration: "none", color: "#333" }}>
+          <a
+            href="/fornecedores"
+            style={{ textDecoration: "none", color: "#333" }}
+          >
             Fornecedores
           </a>
         </MenuItem>
@@ -139,7 +156,7 @@ const Header = () => {
             Serviços
           </a>
         </MenuItem>
-      </Menu >
+      </Menu>
     </>
   );
 };
