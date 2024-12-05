@@ -35,11 +35,26 @@ const fornecedores = [
 const Fornecedores = () => {
   return (
     <div>
-      <h1 style={{ textAlign: 'left' }}>Fornecedores</h1>
-      <div>
+      <h1 style={{ textAlign: 'left', padding: '20px 0' }}>Fornecedores</h1>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {fornecedores.map((fornecedor) => (
-          <div key={fornecedor.id} style={{ margin: '20px', border: '1px solid #ccc', padding: '10px' }}>
-            <img src={fornecedor.imagem} alt={fornecedor.nome} style={{ width: '150px', height: '150px' }} />
+          <div
+            key={fornecedor.id}
+            style={{
+              margin: '10px',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+              width: '200px',
+              padding: '10px',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+              textAlign: 'center'
+            }}
+          >
+            <img
+              src={fornecedor.imagem}
+              alt={fornecedor.nome}
+              style={{ width: '100%', height: 'auto', borderRadius: '4px' }}
+            />
             <h2>{fornecedor.nome}</h2>
             <p>{fornecedor.descricao}</p>
             <p>{fornecedor.telefone}</p>
