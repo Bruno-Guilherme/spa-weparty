@@ -120,7 +120,7 @@ const Promocoes = () => {
 
   return (
     <div>
-      <h1 style={{ textAlign: 'center' }}>Promoções para sua Festa</h1>
+      <h1 style={{ textAlign: 'left', marginBottom: '1px' }}>Promoções</h1>
       <div style={containerStyle}>
         {produtos.map((produto) => (
           <div key={produto.id} style={cardStyle}>
