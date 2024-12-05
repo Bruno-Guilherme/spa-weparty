@@ -1,10 +1,10 @@
 import React from 'react';
-//import FornecedorCard from '../fornecedores/FornecedorCard';
+import FornecedorCard from '../fornecedores/FornecedorCard';
 
 const fornecedores = [
   {
     id: 1,
-    nome: "Aniel Flores",
+    nome: "Aniel Florees",
     descricao: "Flores e Decorações",
     telefone: "81 99999-9999",
     imagem: "https://via.placeholder.com/150"
@@ -38,27 +38,13 @@ const Fornecedores = () => {
       <h1 style={{ textAlign: 'left', padding: '20px 0' }}>Fornecedores</h1>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {fornecedores.map((fornecedor) => (
-          <div
+          <FornecedorCard
             key={fornecedor.id}
-            style={{
-              margin: '10px',
-              border: '1px solid #ddd',
-              borderRadius: '8px',
-              width: '200px',
-              padding: '10px',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-              textAlign: 'center'
-            }}
-          >
-            <img
-              src={fornecedor.imagem}
-              alt={fornecedor.nome}
-              style={{ width: '100%', height: 'auto', borderRadius: '4px' }}
-            />
-            <h2>{fornecedor.nome}</h2>
-            <p>{fornecedor.descricao}</p>
-            <p>{fornecedor.telefone}</p>
-          </div>
+            imagem={fornecedor.imagem}
+            nome={fornecedor.nome}
+            descricao={fornecedor.descricao}
+            telefone={fornecedor.telefone}
+          />
         ))}
       </div>
     </div>
