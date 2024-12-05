@@ -1,5 +1,11 @@
-const Promocoes = () => {
-    return <h1>Promocoessss</h1>
-}
+import React from 'react';
 
-export default Promocoes
+const Promocoes = () => {
+  return (
+    <div>
+      <h1>Promoções para sua Festa</h1>
+    </div>
+  );
+};
+
+export default Promocoes;
