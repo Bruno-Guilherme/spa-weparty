@@ -20,12 +20,16 @@ const FornecedorCard = ({ imagem, nome, descricao, numeroContato }) => {
       <p>{descricao}</p>
       <button
         style={{
-          backgroundColor: '#25d366',
+          backgroundColor: '#FF4D4D', // Vermelho igual ao botão de promoções
           color: '#fff',
           border: 'none',
-          padding: '10px 20px',
+          padding: '12px 30px',  // Tamanho do botão
           borderRadius: '4px',
+          fontSize: '1rem',  // Tamanho da fonte
+          fontWeight: 'bold',  // Fonte mais pesada
           cursor: 'pointer',
+          marginTop: '10px',  // Distância do texto
+          textTransform: 'uppercase',  // Letras maiúsculas
         }}
         onClick={() => window.open(`https://wa.me/55${numeroContato}`, '_blank')}
       >
