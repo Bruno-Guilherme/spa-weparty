@@ -131,20 +131,6 @@ export function Home() {
           />
         </Box>
       </Box>
-
-      <Box sx={{ textAlign: "center", padding: 2 }}>
-        {/* Título da seção */}
-        <Typography
-          variant="h2"
-          component="h2"
-          sx={{
-            fontSize: "1.5rem",
-            fontWeight: 600,
-          }}
-        >
-          Fornecedores populares
-        </Typography>
-      </Box>
     </main>
   );
 }
