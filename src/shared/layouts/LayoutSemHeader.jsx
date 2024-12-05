@@ -1,16 +1,29 @@
-import { Outlet } from 'react-router-dom';
+import { Box, Container } from "@mui/material";
+import { Outlet } from "react-router-dom";
+import Footer from "../components/footer/Footer";
 
 const LayoutSemHeader = () => {
   return (
-    <>
-      <main>
-        {/* Sem header, mas mantendo o Outlet para a renderização das páginas */}
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
+      <Container
+        sx={{
+          flexGrow: 2,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Outlet />
-      </main>
-      <footer>
-        <p>© 2024 WeParty</p>
-      </footer>
-    </>
+      </Container>
+      <Footer />
+    </Box>
   );
 };
 
