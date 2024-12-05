@@ -32,24 +32,38 @@ const Promocoes = () => {
       ];
     
       return (
-        <div>
+        <div style={{ textAlign: 'center', padding: '20px' }}>
           <h1>Promoções para sua Festa</h1>
-          <ul>
-            {produtos.map(produto => (
-              <li key={produto.id}>
-                <img src={produto.imagem} alt={produto.nome} />
-                <h2>{produto.nome}</h2>
-                <p>{produto.descricao}</p>
-                <p style={{ textDecoration: 'line-through', color: 'red' }}>
-                R${produto.precoOriginal}
-                </p>
-                <p>Agora por: R${produto.precoPromocional}</p>
-                <p>Para contato: {produto.numeroContato}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      );
-    };
-    
+          <ul style={{ listStyleType: 'none', padding: 0 }}>
+          {produtos.map((produto) => (
+          <li key={produto.id} style={{ marginBottom: '20px' }}>
+            <img src={produto.imagem} alt={produto.nome} style={{ width: '200px' }} />
+            <h2>{produto.nome}</h2>
+            <p>{produto.descricao}</p>
+            <p style={{ textDecoration: 'line-through', color: 'red' }}>
+              R${produto.precoOriginal}
+            </p>
+            <p style={{ fontWeight: 'bold' }}>Agora por: R${produto.precoPromocional}</p>
+            <a
+              href={`https://wa.me/${produto.numeroContato}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                padding: '10px 20px',
+                backgroundColor: '#25D366',
+                color: '#fff',
+                textDecoration: 'none',
+                borderRadius: '5px',
+              }}
+            >
+              Fale Conosco
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 export default Promocoes;
