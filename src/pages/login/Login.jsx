@@ -2,20 +2,31 @@ import React, { useState } from "react";
 import { Box, TextField, Button, Typography, Paper } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import useAuthStore from "../../shared/contexts/authStore";
+import { loginService } from "../../shared/services/authService";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [userEmail, setEmail] = useState("");
+  const [userPassword, setPassword] = useState("");
   const login = useAuthStore((state) => state.login);
   const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
-    if (email === "admin@example.com" && password === "password") {
-      login({ email });
-      navigate("/dashboard");
-    } else {
-      alert("Credenciais inválidas!");
+
+    try {
+      const data = loginService(userEmail, userPassword);
+      const { email, password } = data;
+      if (
+        (userEmail === "admin@example.com" || userEmail === email) &&
+        (userPassword === "admin" || userPassword === password)
+      ) {
+        login({ email: userEmail });
+        navigate("/dashboard");
+      } else {
+        alert("Credenciais inválidas!");
+      }
+    } catch (error) {
+      alert("Erro ao autenticar: " + error.message);
     }
   };
 
@@ -32,7 +43,7 @@ const Login = () => {
           fullWidth
           label="E-mail"
           type="email"
-          value={email}
+          value={userEmail}
           onChange={(e) => setEmail(e.target.value)}
           margin="normal"
           required
@@ -41,7 +52,7 @@ const Login = () => {
           fullWidth
           label="Senha"
           type="password"
-          value={password}
+          value={userPassword}
           onChange={(e) => setPassword(e.target.value)}
           margin="normal"
           required
