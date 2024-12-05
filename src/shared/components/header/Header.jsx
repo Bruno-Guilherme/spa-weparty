@@ -75,7 +75,6 @@ const Header = () => {
             <Link to="/sobre">
               <Button
                 color="inherit"
-                href="/sobre"
                 sx={{ color: "#333", fontWeight: 500 }}
               >
                 Sobre
