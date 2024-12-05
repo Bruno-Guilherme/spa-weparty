@@ -16,6 +16,8 @@ import mockProducts from "../shared/mocks/mockProduto";
 import { servicosLoader } from "./loaders/servicosLoader";
 import Login from "../pages/login/Login";
 import Register from "../pages/registro/Registro";
+import Dashboard from "../pages/dashboard/dashboard";
+import ProtectedRoute from "../shared/components/protectedRoute/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
       {
         path: "sobre", // Rota sobre
         element: <Sobre />,
+      },
+      {
+        path: "dashboard",
+        element: (
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

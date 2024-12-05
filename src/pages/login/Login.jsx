@@ -1,18 +1,33 @@
-// Login.js
 import React, { useState } from "react";
 import { Box, TextField, Button, Typography, Paper } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuthStore from "../../shared/contexts/authStore";
+import { loginService } from "../../shared/services/authService";
 
-const Login = ({ onLogin }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Login = () => {
+  const [userEmail, setEmail] = useState("");
+  const [userPassword, setPassword] = useState("");
+  const login = useAuthStore((state) => state.login);
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (onLogin) {
-      onLogin({ email, password });
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    try {
+      const data = loginService(userEmail, userPassword);
+      const { email, password } = data;
+      if (
+        (userEmail === "admin@example.com" || userEmail === email) &&
+        (userPassword === "admin" || userPassword === password)
+      ) {
+        login({ email: userEmail });
+        navigate("/dashboard");
+      } else {
+        alert("Credenciais inválidas!");
+      }
+    } catch (error) {
+      alert("Erro ao autenticar: " + error.message);
     }
-    console.log("Usuário logado:", { email, password });
   };
 
   return (
@@ -28,7 +43,7 @@ const Login = ({ onLogin }) => {
           fullWidth
           label="E-mail"
           type="email"
-          value={email}
+          value={userEmail}
           onChange={(e) => setEmail(e.target.value)}
           margin="normal"
           required
@@ -37,7 +52,7 @@ const Login = ({ onLogin }) => {
           fullWidth
           label="Senha"
           type="password"
-          value={password}
+          value={userPassword}
           onChange={(e) => setPassword(e.target.value)}
           margin="normal"
           required
@@ -53,7 +68,16 @@ const Login = ({ onLogin }) => {
         </Button>
       </Box>
       <Typography variant="body2" sx={{ marginTop: 2 }}>
-        Não tem uma conta? <Link to="/cadastro">Cadastre-se</Link>
+        Não tem uma conta?{" "}
+        <Button
+          component={Link}
+          to="/cadastro"
+          variant="text"
+          color="primary"
+          sx={{ textTransform: "none", padding: 0 }}
+        >
+          Cadastre-se
+        </Button>
       </Typography>
     </Paper>
   );
