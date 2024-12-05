@@ -1,4 +1,5 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/footer/Footer";
 
@@ -20,6 +21,16 @@ const LayoutSemHeader = () => {
           alignItems: "center",
         }}
       >
+        {/* Botão para redirecionar para a home */}
+        <Button
+          component={Link}
+          to="/"
+          variant="contained"
+          color="primary"
+          sx={{ mb: 2 }} // Margem inferior para espaçamento
+        >
+          Ir para Home
+        </Button>
         <Outlet />
       </Container>
       <Footer />
