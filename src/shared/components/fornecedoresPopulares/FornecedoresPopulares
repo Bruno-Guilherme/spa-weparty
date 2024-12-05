@@ -1,0 +1,29 @@
+import React from 'react';
+import { Box, Typography } from '@mui/material';
+
+export const FornecedoresPopulares = () => {
+  return (
+    <Box sx={{ textAlign: "center", padding: 2 }}>
+      <Typography
+        variant="h2"
+        component="h2"
+        sx={{
+          fontSize: "1.5rem",
+          fontWeight: 600,
+          marginBottom: "1rem",
+        }}
+      >
+        Fornecedores Populares
+      </Typography>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: 2,
+        }}
+      >
+        {/* Cartões de fornecedores serão adicionados aqui */}
+      </Box>
+    </Box>
+  );
+};
