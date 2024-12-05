@@ -9,6 +9,7 @@ const Promocoes = () => {
           descricao: "Decoração com balões para festas de todos os tipos.",
           precoOriginal: 500.00,
           precoPromocional: 399.00,
+          numeroContato: "+55 81 91234-5678",
         },
         {
           id: 2,
@@ -17,6 +18,7 @@ const Promocoes = () => {
           descricao: "Kit com 10 lembrancinhas personalizadas para convidados.",
           precoOriginal: 150.00,
           precoPromocional: 120.00,
+          numeroContato: "+55 81 98765-4321",
         },
         {
           id: 3,
@@ -25,6 +27,7 @@ const Promocoes = () => {
           descricao: "Buffet completo para festas com até 50 convidados.",
           precoOriginal: 2500.00,
           precoPromocional: 1999.00,
+          numeroContato: "+55 81 99887-6655",
         },
       ];
     
@@ -41,6 +44,7 @@ const Promocoes = () => {
                 R${produto.precoOriginal}
                 </p>
                 <p>Agora por: R${produto.precoPromocional}</p>
+                <p>Para contato: {produto.numeroContato}</p>
               </li>
             ))}
           </ul>
