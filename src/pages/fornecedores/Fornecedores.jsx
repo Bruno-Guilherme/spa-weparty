@@ -1,5 +1,3 @@
-const Fornecedores = () => {
-    return <h1>Fornecedores</h1>
-}
+import React from 'react';
+import FornecedorCard from '../fornecedores/FornecedorCard';
 
-export default Fornecedores
