@@ -10,16 +10,15 @@ const LayoutComHeader = () => {
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
-
       }}
     >
       <Header />
 
       <Container
-      maxWidth="xl"
-      sx={{
-        flexGrow: 2
-      }}
+        maxWidth="xl"
+        sx={{
+          flexGrow: 2,
+        }}
       >
         <Outlet />
       </Container>
