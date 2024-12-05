@@ -144,6 +144,11 @@ export function Home() {
         >
           Fornecedores populares
         </Typography>
+        
+        <CardMedio
+          categoriaNome={"Aniel Flores"}
+          urlImagem={"https://via.placeholder.com/100"}
+        />        
       </Box>
     </main>
   );
