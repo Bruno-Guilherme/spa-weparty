@@ -11,6 +11,8 @@ import { Carrinho } from "../tests/carrinho/Carrinho";
 import Fornecedores from "../pages/fornecedores/Fornecedores";
 import Promocoes from "../pages/promocoes/Promocoes";
 import Servicos from "../pages/servicos/Servicos";
+import ProductList from "../pages/productList/ProductList";
+import mockProducts from "../shared/mocks/mockProduto";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
         },
         {
           path: "servicos",
-          element: <Servicos />,
+          element: <ProductList products={mockProducts}  />,
         },
         {
           path: "carrinho",
