@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/v1/";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const registerService = async (
   nome,
@@ -8,7 +8,7 @@ export const registerService = async (
   telefone,
   endereco,
   cpf,
-  password
+  senha
 ) => {
   try {
     const response = await axios.post(
@@ -19,7 +19,7 @@ export const registerService = async (
         telefone,
         endereco,
         cpf,
-        password,
+        senha,
       },
       {
         headers: {

@@ -9,7 +9,7 @@ const Register = () => {
   const [telefone, setTelefone] = useState("");
   const [endereco, setEndereco] = useState("");
   const [cpf, setCpf] = useState("");
-  const [password, setPassword] = useState("");
+  const [senha, setSenha] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
 
@@ -17,18 +17,18 @@ const Register = () => {
     event.preventDefault();
 
     // Validação de campos
-    if (!nome || !email || !telefone || !endereco || !cpf || !password || !confirmPassword) {
+    if (!nome || !email || !telefone || !endereco || !cpf || !senha || !confirmPassword) {
       alert("Todos os campos são obrigatórios.");
       return;
     }
 
-    if (password !== confirmPassword) {
+    if (senha !== confirmPassword) {
       alert("As senhas não coincidem.");
       return;
     }
 
     try {
-      await registerService(nome, email, telefone, endereco, cpf, password);
+      await registerService(nome, email, telefone, endereco, cpf, senha);
       alert("Cadastro realizado com sucesso!");
       navigate("/login");
     } catch (error) {
@@ -90,8 +90,8 @@ const Register = () => {
           fullWidth
           label="Senha"
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={senha}
+          onChange={(e) => setSenha(e.target.value)}
           margin="normal"
           required
         />

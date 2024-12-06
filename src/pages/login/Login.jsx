@@ -6,7 +6,7 @@ import { loginService } from "../../shared/services/authService";
 
 const Login = () => {
   const [userEmail, setEmail] = useState("");
-  const [userPassword, setPassword] = useState("");
+  const [userSenha, setPassword] = useState("");
   const login = useAuthStore((state) => state.login);
   const navigate = useNavigate();
 
@@ -14,11 +14,11 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const data = loginService(userEmail, userPassword);
-      const { email, password } = data;
+      const data = loginService(userEmail, userSenha);
+      const { email, senha } = data;
       if (
         (userEmail === "admin@example.com" || userEmail === email) &&
-        (userPassword === "admin" || userPassword === password)
+        (userSenha === "admin" || userSenha === senha)
       ) {
         login({ email: userEmail });
         navigate("/dashboard");
@@ -52,7 +52,7 @@ const Login = () => {
           fullWidth
           label="Senha"
           type="password"
-          value={userPassword}
+          value={userSenha}
           onChange={(e) => setPassword(e.target.value)}
           margin="normal"
           required
