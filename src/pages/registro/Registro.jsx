@@ -1,36 +1,55 @@
-// Register.js
 import React, { useState } from "react";
 import { Box, TextField, Button, Typography, Paper } from "@mui/material";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { registerService } from "../../shared/services/registerService";
 
-const Register = ({ onRegister }) => {
-  const [name, setName] = useState("");
+const Register = () => {
+  const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [endereco, setEndereco] = useState("");
+  const [cpf, setCpf] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleRegister = (e) => {
-    e.preventDefault();
-    // Aqui você pode integrar a lógica de registro
-    if (onRegister) {
-      onRegister({ name, email, password });
+  const handleRegister = async (event) => {
+    event.preventDefault();
+
+    // Validação de campos
+    if (!nome || !email || !telefone || !endereco || !cpf || !password || !confirmPassword) {
+      alert("Todos os campos são obrigatórios.");
+      return;
     }
-    console.log("Usuário registrado:", { name, email, password });
+
+    if (password !== confirmPassword) {
+      alert("As senhas não coincidem.");
+      return;
+    }
+
+    try {
+      await registerService(nome, email, telefone, endereco, cpf, password);
+      alert("Cadastro realizado com sucesso!");
+      navigate("/login");
+    } catch (error) {
+      alert("Erro ao registrar: " + error.message);
+    }
   };
 
   return (
     <Paper
       elevation={3}
-      sx={{ padding: 4, maxWidth: 400, margin: "auto", marginTop: 4 }}
+      sx={{ padding: 4, maxWidth: 500, margin: "auto", marginTop: 4 }}
     >
       <Typography variant="h4" component="h1" gutterBottom>
-        Registro
+        Cadastro
       </Typography>
       <Box component="form" onSubmit={handleRegister} noValidate>
         <TextField
           fullWidth
           label="Nome"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
           margin="normal"
           required
         />
@@ -45,10 +64,43 @@ const Register = ({ onRegister }) => {
         />
         <TextField
           fullWidth
+          label="Telefone"
+          value={telefone}
+          onChange={(e) => setTelefone(e.target.value)}
+          margin="normal"
+          required
+        />
+        <TextField
+          fullWidth
+          label="Endereço"
+          value={endereco}
+          onChange={(e) => setEndereco(e.target.value)}
+          margin="normal"
+          required
+        />
+        <TextField
+          fullWidth
+          label="CPF"
+          value={cpf}
+          onChange={(e) => setCpf(e.target.value)}
+          margin="normal"
+          required
+        />
+        <TextField
+          fullWidth
           label="Senha"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          margin="normal"
+          required
+        />
+        <TextField
+          fullWidth
+          label="Confirmar Senha"
+          type="password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
           margin="normal"
           required
         />
@@ -59,12 +111,9 @@ const Register = ({ onRegister }) => {
           color="primary"
           sx={{ marginTop: 2 }}
         >
-          Registrar
+          Cadastrar
         </Button>
       </Box>
-      <Typography variant="body2" sx={{ marginTop: 2 }}>
-        Já tem uma conta? <Link to="/login">Faça login</Link>
-      </Typography>
     </Paper>
   );
 };
