@@ -12,6 +12,14 @@ const LayoutSemHeader = () => {
         minHeight: "100vh",
       }}
     >
+      <Button
+        component={Link}
+        to="/"
+        variant="contained"
+        color="primary"
+      >
+        Ir para Home
+      </Button>
       <Container
         sx={{
           flexGrow: 2,
@@ -19,18 +27,9 @@ const LayoutSemHeader = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          mb: 2,
         }}
       >
-        {/* Botão para redirecionar para a home */}
-        <Button
-          component={Link}
-          to="/"
-          variant="contained"
-          color="primary"
-          sx={{ mb: 2 }} // Margem inferior para espaçamento
-        >
-          Ir para Home
-        </Button>
         <Outlet />
       </Container>
       <Footer />
