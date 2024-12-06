@@ -10,23 +10,24 @@ const Login = () => {
   const login = useAuthStore((state) => state.login);
   const navigate = useNavigate();
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
 
-    try {
-      const data = loginService(userEmail, userSenha);
-      const { email, senha } = data;
-      if (
-        (userEmail === "admin@example.com" || userEmail === email) &&
-        (userSenha === "admin" || userSenha === senha)
-      ) {
-        login({ email: userEmail });
-        navigate("/dashboard");
-      } else {
-        alert("Credenciais inválidas!");
+    if (userEmail === "admin@admin.com" && userSenha === "admin") {
+      login({ email: userEmail });
+      navigate("/dashboard");
+    } else {
+      try {
+        const data = await loginService(userEmail, userSenha);
+        if (data) {
+          login({ email: userEmail });
+          navigate("/dashboard");
+        } else {
+          alert("Credenciais inválidas!!");
+        }
+      } catch (error) {
+        alert("Erro no login: " + error.message);
       }
-    } catch (error) {
-      alert("Erro ao autenticar: " + error.message);
     }
   };
 
