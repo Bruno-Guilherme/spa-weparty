@@ -34,23 +34,12 @@ export const getFornecedores = async () => {
         'X-Parse-Application-Id': 'NdRhReEWkw5qlw1rLVZ0q0ob0HE8TmMI06klzPt3',
         'X-Parse-REST-API-Key': 'r9aMDbTxqPaqlNHm7klC516ebZHeVS31QMrUPzxz'
       },
-      params: {
-        /* where: JSON.stringify({
-          nome: 'A string',
-          imagem_perfil: 'A string',
-          banner: 'A string',
-          descricao: 'A string',
-          produtos: 'A string'
-        }) */
-      }
     });
 
-    console.log(url)
-    
     console.log(response.data);
-
-    return response.data;
+    return response.data; // Retorno em caso de sucesso
   } catch (error) {
     console.error(error);
+    return null; // Retorno em caso de erro
   }
 };
